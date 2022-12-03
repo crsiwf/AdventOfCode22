@@ -1,2 +1,5 @@
 */input
 .hlint.yaml
+*/target/
+*/debug/
+*/Cargo.lock
