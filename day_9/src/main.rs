@@ -35,7 +35,7 @@ fn translate(position: Position, direction: Direction) -> Position {
 }
 
 fn update_tail(head: Position, tail: Position) -> Position {
-    let clamp = |(x, y)| ((-1).max(1.min(x)), (-1).max(1.min(y)));
+    let clamp = |(x, y): (isize, isize)| (x.signum(), y.signum());
     let difference = (head.0 - tail.0, head.1 - tail.1);
     if difference.0.abs() >= 2 || difference.1.abs() >= 2 {
         translate(tail, clamp(difference))
